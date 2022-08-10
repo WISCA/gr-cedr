@@ -16,7 +16,8 @@ namespace cedr {
 class fft_impl : public fft
 {
 private:
-    // Nothing to declare in this block.
+    const bool d_direction;
+    const size_t d_vlen;
 
 public:
     fft_impl(bool direction, size_t vlen);
