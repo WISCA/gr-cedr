@@ -19,9 +19,6 @@
  static const char *__doc_gr_cedr_fft = R"doc()doc";
 
 
- static const char *__doc_gr_cedr_fft_fft = R"doc()doc";
-
-
  static const char *__doc_gr_cedr_fft_make = R"doc()doc";
 
   

@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(fft.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(dcef7ca5434fc0b69b134c2f0d70708f)                     */
+/* BINDTOOL_HEADER_FILE_HASH(7daf6875a2cbd2dbf7138d439e5818aa)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -37,6 +37,8 @@ void bind_fft(py::module& m)
         std::shared_ptr<fft>>(m, "fft", D(fft))
 
         .def(py::init(&fft::make),
+           py::arg("direction"),
+           py::arg("vlen"),
            D(fft,make)
         )
         

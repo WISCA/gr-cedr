@@ -10,6 +10,7 @@
 
 #include <gnuradio/cedr/api.h>
 #include <gnuradio/sync_block.h>
+#include <dash.h>
 
 namespace gr {
 namespace cedr {
