@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(fft.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(7daf6875a2cbd2dbf7138d439e5818aa)                     */
+/* BINDTOOL_HEADER_FILE_HASH(921c6c92fb2e0c551b16328fb3302d58)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -30,32 +30,12 @@ namespace py = pybind11;
 void bind_fft(py::module& m)
 {
 
-    using fft    = gr::cedr::fft;
+    using fft = gr::cedr::fft;
 
+    py::class_<fft, gr::sync_block, gr::block, gr::basic_block,std::shared_ptr<fft>>(m, "fft", D(fft))
 
-    py::class_<fft, gr::sync_block, gr::block, gr::basic_block,
-        std::shared_ptr<fft>>(m, "fft", D(fft))
-
-        .def(py::init(&fft::make),
-           py::arg("direction"),
-           py::arg("vlen"),
-           D(fft,make)
-        )
-        
-
+        .def(py::init(&fft::make), py::arg("direction"), py::arg("vlen"), D(fft, make))
 
 
         ;
-
-
-
-
 }
-
-
-
-
-
-
-
-
